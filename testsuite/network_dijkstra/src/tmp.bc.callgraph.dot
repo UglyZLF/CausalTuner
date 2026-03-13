@@ -1,0 +1,40 @@
+digraph "Call graph: tmp.bc" {
+	label="Call graph: tmp.bc";
+
+	Node0x146c4b0 [shape=record,label="{print_path}"];
+	Node0x146c4b0 -> Node0x146c4b0;
+	Node0x146c4b0 -> Node0x1498e50;
+	Node0x146c4b0 -> Node0x14960c0;
+	Node0x1498e50 [shape=record,label="{printf}"];
+	Node0x14960c0 [shape=record,label="{fflush}"];
+	Node0x1496140 [shape=record,label="{enqueue}"];
+	Node0x1496140 -> Node0x146c590;
+	Node0x1496140 -> Node0x1499080;
+	Node0x1496140 -> Node0x1499100;
+	Node0x146c590 [shape=record,label="{malloc}"];
+	Node0x1499080 [shape=record,label="{fprintf}"];
+	Node0x1499100 [shape=record,label="{exit}"];
+	Node0x1499140 [shape=record,label="{dequeue}"];
+	Node0x1499140 -> Node0x149a810;
+	Node0x149a810 [shape=record,label="{free}"];
+	Node0x14997d0 [shape=record,label="{qcount}"];
+	Node0x149a850 [shape=record,label="{dijkstra}"];
+	Node0x149a850 -> Node0x1498e50;
+	Node0x149a850 -> Node0x1496140;
+	Node0x149a850 -> Node0x14997d0;
+	Node0x149a850 -> Node0x1499140;
+	Node0x149a890 [shape=record,label="{main}"];
+	Node0x149a890 -> Node0x1499080;
+	Node0x149a890 -> Node0x149a810;
+	Node0x149a890 -> Node0x1499100;
+	Node0x149a890 -> Node0x1496c70;
+	Node0x149a890 -> Node0x1498e50;
+	Node0x149a890 -> Node0x146c4b0;
+	Node0x149a890 -> Node0x1497460;
+	Node0x149a890 -> Node0x14974e0;
+	Node0x149a890 -> Node0x149a850;
+	Node0x149a890 -> Node0x146c590;
+	Node0x1496c70 [shape=record,label="{fopen}"];
+	Node0x1497460 [shape=record,label="{__isoc99_fscanf}"];
+	Node0x14974e0 [shape=record,label="{fclose}"];
+}

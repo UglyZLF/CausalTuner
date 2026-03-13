@@ -1,0 +1,48 @@
+digraph "Call graph: tmp.bc" {
+	label="Call graph: tmp.bc";
+
+	Node0x13f4960 [shape=record,label="{main}"];
+	Node0x13f4960 -> Node0x13c5890;
+	Node0x13f4960 -> Node0x13c5a20;
+	Node0x13f4960 -> Node0x13f8800;
+	Node0x13f4960 -> Node0x13f8d60;
+	Node0x13f4960 -> Node0x13f7d90;
+	Node0x13f4960 -> Node0x13c5550;
+	Node0x13f8800 [shape=record,label="{kernel_lu}"];
+	Node0x13c5a20 [shape=record,label="{init_array}"];
+	Node0x13c5a20 -> Node0x13c5890;
+	Node0x13c5a20 -> Node0x13c5550;
+	Node0x13f8d60 [shape=record,label="{strcmp}"];
+	Node0x13f7d90 [shape=record,label="{print_array}"];
+	Node0x13f7d90 -> Node0x13c55d0;
+	Node0x13c5550 [shape=record,label="{free}"];
+	Node0x13c55d0 [shape=record,label="{fprintf}"];
+	Node0x13c5d80 [shape=record,label="{llvm.fmuladd.f64}"];
+	Node0x13f6490 [shape=record,label="{polybench_flush_cache}"];
+	Node0x13f6490 -> Node0x13f6510;
+	Node0x13f6490 -> Node0x13c5e00;
+	Node0x13f6490 -> Node0x13c5550;
+	Node0x13f6510 [shape=record,label="{calloc}"];
+	Node0x13c5e00 [shape=record,label="{__assert_fail}"];
+	Node0x13f60d0 [shape=record,label="{polybench_prepare_instruments}"];
+	Node0x13f60d0 -> Node0x13f6490;
+	Node0x13f68a0 [shape=record,label="{polybench_timer_start}"];
+	Node0x13f68a0 -> Node0x13f60d0;
+	Node0x13f68a0 -> Node0x13f6920;
+	Node0x13f6920 [shape=record,label="{rtclock}"];
+	Node0x13f69a0 [shape=record,label="{polybench_timer_stop}"];
+	Node0x13f69a0 -> Node0x13f6920;
+	Node0x13f6a20 [shape=record,label="{polybench_timer_print}"];
+	Node0x13f6a20 -> Node0x13f6aa0;
+	Node0x13f6aa0 [shape=record,label="{printf}"];
+	Node0x13f7ee0 [shape=record,label="{polybench_free_data}"];
+	Node0x13f7ee0 -> Node0x13c5550;
+	Node0x13c5890 [shape=record,label="{polybench_alloc_data}"];
+	Node0x13c5890 -> Node0x13f7f60;
+	Node0x13f7f60 [shape=record,label="{xmalloc}"];
+	Node0x13f7f60 -> Node0x13f94d0;
+	Node0x13f7f60 -> Node0x13c55d0;
+	Node0x13f7f60 -> Node0x13f9580;
+	Node0x13f94d0 [shape=record,label="{posix_memalign}"];
+	Node0x13f9580 [shape=record,label="{exit}"];
+}

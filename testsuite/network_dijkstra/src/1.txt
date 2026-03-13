@@ -1,0 +1,8 @@
+Found dataset:  1
+Command line:   ../../network_dijkstra_data/1.dat > output_large.dat
+Loop wrap:      1000000
+
+
+real	0m1.628s
+user	0m1.599s
+sys	0m0.005s

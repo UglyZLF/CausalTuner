@@ -1,0 +1,8 @@
+Found dataset:  1
+Command line:   -c g4 ../../consumer_tiff_data/1.bw.tif output_largedither.tif 2> ftmp_out
+Loop wrap:      250
+
+
+real	0m1.569s
+user	0m1.462s
+sys	0m0.042s

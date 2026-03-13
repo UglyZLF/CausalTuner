@@ -1,0 +1,41 @@
+digraph "Call graph: tmp.bc" {
+	label="Call graph: tmp.bc";
+
+	Node0x1ee5200 [shape=record,label="{main}"];
+	Node0x1ee5200 -> Node0x1ee40b0;
+	Node0x1ee5200 -> Node0x1ea94f0;
+	Node0x1ee5200 -> Node0x1ee6140;
+	Node0x1ee5200 -> Node0x1ea68b0;
+	Node0x1ee5200 -> Node0x1ebaf90;
+	Node0x1ee5200 -> Node0x1eb9290;
+	Node0x1ee5200 -> Node0x1ea3670;
+	Node0x1ee5200 -> Node0x1ee4000;
+	Node0x1ee5200 -> Node0x1ea35f0;
+	Node0x1ee5200 -> Node0x1ee41e0;
+	Node0x1ee5200 -> Node0x1ebc0c0;
+	Node0x1ee5200 -> Node0x1ee53f0;
+	Node0x1ea94f0 [shape=record,label="{exit}"];
+	Node0x1eb9be0 [shape=record,label="{llvm.memset.p0i8.i64}"];
+	Node0x1ee40b0 [shape=record,label="{fprintf}"];
+	Node0x1ebaf90 [shape=record,label="{toupper}"];
+	Node0x1eb9290 [shape=record,label="{printf}"];
+	Node0x1ebc0c0 [shape=record,label="{fopen}"];
+	Node0x1ee53f0 [shape=record,label="{__isoc99_fscanf}"];
+	Node0x1ee6140 [shape=record,label="{fclose}"];
+	Node0x1ee41e0 [shape=record,label="{feof}"];
+	Node0x1ea35f0 [shape=record,label="{getc}"];
+	Node0x1eb9c60 [shape=record,label="{llvm.memcpy.p0i8.p0i8.i64}"];
+	Node0x1ea68b0 [shape=record,label="{fputc}"];
+	Node0x1ea6020 [shape=record,label="{BF_cbc_encrypt}"];
+	Node0x1ea6020 -> Node0x1eb28a0;
+	Node0x1ea3670 [shape=record,label="{BF_cfb64_encrypt}"];
+	Node0x1ea3670 -> Node0x1eb28a0;
+	Node0x1ee4b20 [shape=record,label="{BF_options}"];
+	Node0x1ee4ba0 [shape=record,label="{BF_ecb_encrypt}"];
+	Node0x1ee4ba0 -> Node0x1eb28a0;
+	Node0x1eb28a0 [shape=record,label="{BF_encrypt}"];
+	Node0x1ea8f40 [shape=record,label="{BF_ofb64_encrypt}"];
+	Node0x1ea8f40 -> Node0x1eb28a0;
+	Node0x1ee4000 [shape=record,label="{BF_set_key}"];
+	Node0x1ee4000 -> Node0x1eb28a0;
+}

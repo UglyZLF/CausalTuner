@@ -1,0 +1,4 @@
+Found dataset:  1
+Command line:   ../../consumer_tiff_data/1.tif output_largebw.tif > ftmp_out
+Loop wrap:      207
+

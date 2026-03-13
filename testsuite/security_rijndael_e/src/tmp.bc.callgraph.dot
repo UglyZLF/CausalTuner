@@ -1,0 +1,47 @@
+digraph "Call graph: tmp.bc" {
+	label="Call graph: tmp.bc";
+
+	Node0x908ec0 [shape=record,label="{set_key}"];
+	Node0x9091c0 [shape=record,label="{encrypt}"];
+	Node0x909320 [shape=record,label="{decrypt}"];
+	Node0x908700 [shape=record,label="{fillrand}"];
+	Node0x908780 [shape=record,label="{encfile}"];
+	Node0x908780 -> Node0x908700;
+	Node0x908780 -> Node0x909780;
+	Node0x908780 -> Node0x8ce7b0;
+	Node0x908780 -> Node0x90b420;
+	Node0x908780 -> Node0x8ce830;
+	Node0x908780 -> Node0x9091c0;
+	Node0x908780 -> Node0x90b360;
+	Node0x908780 -> Node0x90b3e0;
+	Node0x909780 [shape=record,label="{fseek}"];
+	Node0x8ce7b0 [shape=record,label="{fgetpos}"];
+	Node0x8ce830 [shape=record,label="{fwrite}"];
+	Node0x90b360 [shape=record,label="{feof}"];
+	Node0x90b3e0 [shape=record,label="{fread}"];
+	Node0x90b420 [shape=record,label="{printf}"];
+	Node0x908cd0 [shape=record,label="{decfile}"];
+	Node0x908cd0 -> Node0x90b3e0;
+	Node0x908cd0 -> Node0x90b420;
+	Node0x908cd0 -> Node0x8ce830;
+	Node0x908cd0 -> Node0x909320;
+	Node0x909d10 [shape=record,label="{main1}"];
+	Node0x909d10 -> Node0x909d90;
+	Node0x909d10 -> Node0x90a410;
+	Node0x909d10 -> Node0x90b420;
+	Node0x909d10 -> Node0x908cd0;
+	Node0x909d10 -> Node0x908ec0;
+	Node0x909d10 -> Node0x908780;
+	Node0x909d10 -> Node0x909e10;
+	Node0x909d90 [shape=record,label="{toupper}"];
+	Node0x909e10 [shape=record,label="{fopen}"];
+	Node0x90a410 [shape=record,label="{fclose}"];
+	Node0x908d50 [shape=record,label="{main}"];
+	Node0x908d50 -> Node0x909e10;
+	Node0x908d50 -> Node0x908dd0;
+	Node0x908d50 -> Node0x90ae70;
+	Node0x908d50 -> Node0x90a410;
+	Node0x908d50 -> Node0x909d10;
+	Node0x908dd0 [shape=record,label="{fprintf}"];
+	Node0x90ae70 [shape=record,label="{__isoc99_fscanf}"];
+}

@@ -1,0 +1,42 @@
+digraph "Call graph: tmp.bc" {
+	label="Call graph: tmp.bc";
+
+	Node0x135f5b0 [shape=record,label="{main}"];
+	Node0x135f5b0 -> Node0x1326a00;
+	Node0x135f5b0 -> Node0x1323d20;
+	Node0x135f5b0 -> Node0x1323da0;
+	Node0x135f5b0 -> Node0x13600b0;
+	Node0x135f5b0 -> Node0x1360130;
+	Node0x1326a00 [shape=record,label="{fopen}"];
+	Node0x1323d20 [shape=record,label="{fprintf}"];
+	Node0x1323da0 [shape=record,label="{__isoc99_fscanf}"];
+	Node0x13600b0 [shape=record,label="{fclose}"];
+	Node0x1360560 [shape=record,label="{sha_init}"];
+	Node0x13605e0 [shape=record,label="{sha_update}"];
+	Node0x13605e0 -> Node0x1360660;
+	Node0x13605e0 -> Node0x13606e0;
+	Node0x135f830 [shape=record,label="{llvm.memcpy.p0i8.p0i8.i64}"];
+	Node0x1360660 [shape=record,label="{byte_reverse}"];
+	Node0x13606e0 [shape=record,label="{sha_transform}"];
+	Node0x135f8b0 [shape=record,label="{sha_final}"];
+	Node0x135f8b0 -> Node0x1360660;
+	Node0x135f8b0 -> Node0x13606e0;
+	Node0x135fbc0 [shape=record,label="{llvm.memset.p0i8.i64}"];
+	Node0x1360840 [shape=record,label="{sha_stream}"];
+	Node0x1360840 -> Node0x1360560;
+	Node0x1360840 -> Node0x13608c0;
+	Node0x1360840 -> Node0x13605e0;
+	Node0x1360840 -> Node0x135f8b0;
+	Node0x13608c0 [shape=record,label="{fread}"];
+	Node0x13609f0 [shape=record,label="{sha_print}"];
+	Node0x13609f0 -> Node0x1360a70;
+	Node0x1360a70 [shape=record,label="{printf}"];
+	Node0x1360130 [shape=record,label="{main1}"];
+	Node0x1360130 -> Node0x1360840;
+	Node0x1360130 -> Node0x13609f0;
+	Node0x1360130 -> Node0x1326a00;
+	Node0x1360130 -> Node0x1323d20;
+	Node0x1360130 -> Node0x1360bd0;
+	Node0x1360130 -> Node0x13600b0;
+	Node0x1360bd0 [shape=record,label="{exit}"];
+}

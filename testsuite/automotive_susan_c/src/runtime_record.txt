@@ -1,0 +1,9 @@
+Found dataset:  1
+Command line:   ../../automotive_susan_data/1.pgm output_large.corners.pgm -c > ftmp_out
+Loop wrap:      260
+
+tmp_bat: line 1: ./a.out: cannot execute binary file
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.000s

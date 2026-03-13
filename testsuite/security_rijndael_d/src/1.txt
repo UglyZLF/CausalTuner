@@ -1,0 +1,8 @@
+Found dataset:  1
+Command line:   ../../office_data/1.enc output_large.dec d 1234567890abcdeffedcba09876543211234567890abcdeffedcba0987654321 > ftmp_out
+Loop wrap:      9007
+
+
+real	0m2.439s
+user	0m0.582s
+sys	0m1.057s

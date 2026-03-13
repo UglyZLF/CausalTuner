@@ -1,0 +1,8 @@
+Found dataset:  1
+Command line:   ../../telecom_data/1.pcm > output_large.txt
+Loop wrap:      731
+
+
+real	0m0.975s
+user	0m0.890s
+sys	0m0.038s

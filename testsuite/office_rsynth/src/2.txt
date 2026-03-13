@@ -1,0 +1,8 @@
+Found dataset:  1
+Command line:   -a -q -o large_output.au < ../../office_data/1.txt > ftmp_out 2> ftmp_out1
+Loop wrap:      150
+
+
+real	0m1.712s
+user	0m0.826s
+sys	0m0.000s

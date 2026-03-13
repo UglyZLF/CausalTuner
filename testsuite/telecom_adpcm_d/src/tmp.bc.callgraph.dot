@@ -1,0 +1,25 @@
+digraph "Call graph: tmp.bc" {
+	label="Call graph: tmp.bc";
+
+	Node0x17ae410 [shape=record,label="{adpcm_coder}"];
+	Node0x179b220 [shape=record,label="{adpcm_decoder}"];
+	Node0x17ad930 [shape=record,label="{main}"];
+	Node0x17ad930 -> Node0x17d7810;
+	Node0x17ad930 -> Node0x17d9570;
+	Node0x17ad930 -> Node0x17d7900;
+	Node0x17ad930 -> Node0x17d9940;
+	Node0x17ad930 -> Node0x17d99c0;
+	Node0x17ad930 -> Node0x179fa50;
+	Node0x17ad930 -> Node0x179fad0;
+	Node0x17ad930 -> Node0x179fb50;
+	Node0x17ad930 -> Node0x179b220;
+	Node0x17d7810 [shape=record,label="{fopen}"];
+	Node0x17d9570 [shape=record,label="{fprintf}"];
+	Node0x17d7900 [shape=record,label="{exit}"];
+	Node0x17d9940 [shape=record,label="{__isoc99_fscanf}"];
+	Node0x17d99c0 [shape=record,label="{fclose}"];
+	Node0x17ae510 [shape=record,label="{llvm.memcpy.p0i8.p0i8.i64}"];
+	Node0x179fa50 [shape=record,label="{read}"];
+	Node0x179fad0 [shape=record,label="{perror}"];
+	Node0x179fb50 [shape=record,label="{write}"];
+}

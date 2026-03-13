@@ -1,0 +1,46 @@
+digraph "Call graph: tmp.bc" {
+	label="Call graph: tmp.bc";
+
+	Node0x140a460 [shape=record,label="{main}"];
+	Node0x140a460 -> Node0x13d7490;
+	Node0x140a460 -> Node0x1409e00;
+	Node0x140a460 -> Node0x140a550;
+	Node0x140a460 -> Node0x13d7370;
+	Node0x140a460 -> Node0x13d73f0;
+	Node0x140a460 -> Node0x1409630;
+	Node0x13d7370 [shape=record,label="{kernel_jacobi_2d}"];
+	Node0x140a550 [shape=record,label="{init_array}"];
+	Node0x13d73f0 [shape=record,label="{strcmp}"];
+	Node0x1409630 [shape=record,label="{print_array}"];
+	Node0x1409630 -> Node0x1409e80;
+	Node0x1409e00 [shape=record,label="{free}"];
+	Node0x1409e80 [shape=record,label="{fprintf}"];
+	Node0x140a330 [shape=record,label="{llvm.fmuladd.f64}"];
+	Node0x140a8a0 [shape=record,label="{polybench_flush_cache}"];
+	Node0x140a8a0 -> Node0x140a920;
+	Node0x140a8a0 -> Node0x140a370;
+	Node0x140a8a0 -> Node0x1409e00;
+	Node0x140a920 [shape=record,label="{calloc}"];
+	Node0x140a370 [shape=record,label="{__assert_fail}"];
+	Node0x13d7b70 [shape=record,label="{polybench_prepare_instruments}"];
+	Node0x13d7b70 -> Node0x140a8a0;
+	Node0x140c1c0 [shape=record,label="{polybench_timer_start}"];
+	Node0x140c1c0 -> Node0x13d7b70;
+	Node0x140c1c0 -> Node0x140c240;
+	Node0x140c240 [shape=record,label="{rtclock}"];
+	Node0x140c2c0 [shape=record,label="{polybench_timer_stop}"];
+	Node0x140c2c0 -> Node0x140c240;
+	Node0x140c340 [shape=record,label="{polybench_timer_print}"];
+	Node0x140c340 -> Node0x13d7bb0;
+	Node0x13d7bb0 [shape=record,label="{printf}"];
+	Node0x1409f60 [shape=record,label="{polybench_free_data}"];
+	Node0x1409f60 -> Node0x1409e00;
+	Node0x13d7490 [shape=record,label="{polybench_alloc_data}"];
+	Node0x13d7490 -> Node0x140c780;
+	Node0x140c780 [shape=record,label="{xmalloc}"];
+	Node0x140c780 -> Node0x140c830;
+	Node0x140c780 -> Node0x1409e80;
+	Node0x140c780 -> Node0x140c8e0;
+	Node0x140c830 [shape=record,label="{posix_memalign}"];
+	Node0x140c8e0 [shape=record,label="{exit}"];
+}

@@ -1,0 +1,8 @@
+Found dataset:  1
+Command line:   ../../office_data/1.pgp -o output.txt > ftmp_out 2> ftmp_out1
+Loop wrap:      367
+
+
+real	0m1.745s
+user	0m1.326s
+sys	0m0.267s

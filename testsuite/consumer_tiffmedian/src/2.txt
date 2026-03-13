@@ -1,0 +1,8 @@
+Found dataset:  1
+Command line:   ../../consumer_tiff_data/1.nocomp.tif output_largemedian.tif > ftmp_out
+Loop wrap:      149
+
+
+real	0m3.266s
+user	0m1.526s
+sys	0m0.075s

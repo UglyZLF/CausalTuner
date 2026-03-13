@@ -1,0 +1,29 @@
+digraph "Call graph: tmp.bc" {
+	label="Call graph: tmp.bc";
+
+	Node0x21d4af0 [shape=record,label="{updateCRC32}"];
+	Node0x21d46c0 [shape=record,label="{crc32file}"];
+	Node0x21d46c0 -> Node0x21d41d0;
+	Node0x21d46c0 -> Node0x21d4040;
+	Node0x21d46c0 -> Node0x21d3370;
+	Node0x21d46c0 -> Node0x21d33f0;
+	Node0x21d46c0 -> Node0x21d3470;
+	Node0x21d41d0 [shape=record,label="{fopen}"];
+	Node0x21d4040 [shape=record,label="{perror}"];
+	Node0x21d3370 [shape=record,label="{getc}"];
+	Node0x21d33f0 [shape=record,label="{ferror}"];
+	Node0x21d3470 [shape=record,label="{fclose}"];
+	Node0x21d5d50 [shape=record,label="{crc32buf}"];
+	Node0x21d5dd0 [shape=record,label="{main1}"];
+	Node0x21d5dd0 -> Node0x21d46c0;
+	Node0x21d5dd0 -> Node0x21d60e0;
+	Node0x21d60e0 [shape=record,label="{printf}"];
+	Node0x21d6160 [shape=record,label="{main}"];
+	Node0x21d6160 -> Node0x21d41d0;
+	Node0x21d6160 -> Node0x21d61e0;
+	Node0x21d6160 -> Node0x21d6260;
+	Node0x21d6160 -> Node0x21d3470;
+	Node0x21d6160 -> Node0x21d5dd0;
+	Node0x21d61e0 [shape=record,label="{fprintf}"];
+	Node0x21d6260 [shape=record,label="{__isoc99_fscanf}"];
+}

@@ -1,0 +1,26 @@
+Found dataset:  1
+Command line:   -sDEVICE=ppm -dNOPAUSE -q -sOutputFile=output.ppm -- ../../office_data/1.ps > ftmp_out
+Loop wrap:      1
+
+0  libLLVM-3.8.so.1 0x00007f089922ad38 llvm::sys::PrintStackTrace(llvm::raw_ostream&) + 56
+1  libLLVM-3.8.so.1 0x00007f0899228fc6 llvm::sys::RunSignalHandlers() + 54
+2  libLLVM-3.8.so.1 0x00007f0899229129
+3  libc.so.6        0x00007f089857b4c0
+4  libc.so.6        0x00007f089b7b8f6b
+5  libc.so.6        0x00007f089b825bd1
+6  libc.so.6        0x00007f089b8229dd
+7  libc.so.6        0x00007f089b821891
+8  libc.so.6        0x00007f089b82090d
+9  libc.so.6        0x00007f089b83c259
+10 libLLVM-3.8.so.1 0x00007f0899e2e451 llvm::MCJIT::runFunction(llvm::Function*, llvm::ArrayRef<llvm::GenericValue>) + 657
+11 libLLVM-3.8.so.1 0x00007f0899e0940c llvm::ExecutionEngine::runFunctionAsMain(llvm::Function*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, char const* const*) + 556
+12 lli-3.8          0x0000000000418382 main + 6290
+13 libc.so.6        0x00007f0898566840 __libc_start_main + 240
+14 lli-3.8          0x00000000004191f9 _start + 41
+Stack dump:
+0.	Program arguments: /usr/bin/lli-3.8 ./a.out -sDEVICE=ppm -dNOPAUSE -q -sOutputFile=output.ppm -- ../../office_data/1.ps 
+tmp_bat: 行 1: 17626 段错误               (核心已转储) ./a.out -sDEVICE=ppm -dNOPAUSE -q -sOutputFile=output.ppm -- ../../office_data/1.ps > ftmp_out
+
+real	0m12.735s
+user	0m12.308s
+sys	0m0.103s

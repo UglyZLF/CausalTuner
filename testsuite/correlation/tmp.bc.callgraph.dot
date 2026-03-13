@@ -1,0 +1,48 @@
+digraph "Call graph: tmp.bc" {
+	label="Call graph: tmp.bc";
+
+	Node0x126e080 [shape=record,label="{kernel_correlation}"];
+	Node0x126e080 -> Node0x12a0f80;
+	Node0x126eb10 [shape=record,label="{init_array}"];
+	Node0x12a4390 [shape=record,label="{main}"];
+	Node0x12a4390 -> Node0x12a02a0;
+	Node0x12a4390 -> Node0x126dbb0;
+	Node0x12a4390 -> Node0x126e420;
+	Node0x12a4390 -> Node0x12a4cc0;
+	Node0x12a4390 -> Node0x126eb10;
+	Node0x12a4390 -> Node0x126e080;
+	Node0x12a4cc0 [shape=record,label="{strcmp}"];
+	Node0x126e420 [shape=record,label="{print_array}"];
+	Node0x126e420 -> Node0x126dbf0;
+	Node0x126dbb0 [shape=record,label="{free}"];
+	Node0x126dbf0 [shape=record,label="{fprintf}"];
+	Node0x12a4720 [shape=record,label="{llvm.fmuladd.f64}"];
+	Node0x12a0f80 [shape=record,label="{sqrt}"];
+	Node0x12a47a0 [shape=record,label="{polybench_flush_cache}"];
+	Node0x12a47a0 -> Node0x12a5190;
+	Node0x12a47a0 -> Node0x12a10c0;
+	Node0x12a47a0 -> Node0x126dbb0;
+	Node0x12a5190 [shape=record,label="{calloc}"];
+	Node0x12a10c0 [shape=record,label="{__assert_fail}"];
+	Node0x12a1530 [shape=record,label="{polybench_prepare_instruments}"];
+	Node0x12a1530 -> Node0x12a47a0;
+	Node0x12a15b0 [shape=record,label="{polybench_timer_start}"];
+	Node0x12a15b0 -> Node0x12a1530;
+	Node0x12a15b0 -> Node0x12a1140;
+	Node0x12a1140 [shape=record,label="{rtclock}"];
+	Node0x12a00d0 [shape=record,label="{polybench_timer_stop}"];
+	Node0x12a00d0 -> Node0x12a1140;
+	Node0x12a0150 [shape=record,label="{polybench_timer_print}"];
+	Node0x12a0150 -> Node0x12a01d0;
+	Node0x12a01d0 [shape=record,label="{printf}"];
+	Node0x12a3ed0 [shape=record,label="{polybench_free_data}"];
+	Node0x12a3ed0 -> Node0x126dbb0;
+	Node0x12a02a0 [shape=record,label="{polybench_alloc_data}"];
+	Node0x12a02a0 -> Node0x12a3f50;
+	Node0x12a3f50 [shape=record,label="{xmalloc}"];
+	Node0x12a3f50 -> Node0x12a4000;
+	Node0x12a3f50 -> Node0x126dbf0;
+	Node0x12a3f50 -> Node0x12a40b0;
+	Node0x12a4000 [shape=record,label="{posix_memalign}"];
+	Node0x12a40b0 [shape=record,label="{exit}"];
+}

@@ -1,0 +1,8 @@
+Found dataset:  1
+Command line:   -a -d americanmed+ ../../office_data/1.txt > ftmp_out 2> ftmp_out1
+Loop wrap:      3662
+
+
+real	0m0.781s
+user	0m0.745s
+sys	0m0.005s

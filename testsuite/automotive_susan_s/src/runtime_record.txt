@@ -1,0 +1,8 @@
+Found dataset:  1
+Command line:   ../../automotive_susan_data/1.pgm output_large.smoothing.pgm -s > ftmp_out
+Loop wrap:      18
+
+
+real	0m1.793s
+user	0m1.664s
+sys	0m0.057s

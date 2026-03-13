@@ -1,0 +1,8 @@
+Found dataset:  1
+Command line:   ../../office_data/1.txt ../../office_data/1.s.txt output.txt > ftmp_out
+Loop wrap:      208240
+
+
+real	0m0.806s
+user	0m0.772s
+sys	0m0.005s

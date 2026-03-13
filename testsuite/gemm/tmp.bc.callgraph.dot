@@ -1,0 +1,46 @@
+digraph "Call graph: tmp.bc" {
+	label="Call graph: tmp.bc";
+
+	Node0x252ac30 [shape=record,label="{init_array}"];
+	Node0x2527b90 [shape=record,label="{main}"];
+	Node0x2527b90 -> Node0x24ff4e0;
+	Node0x2527b90 -> Node0x252a160;
+	Node0x2527b90 -> Node0x2529f40;
+	Node0x2527b90 -> Node0x252ac30;
+	Node0x2527b90 -> Node0x2529d60;
+	Node0x2527b90 -> Node0x2529ec0;
+	Node0x2529d60 [shape=record,label="{kernel_gemm}"];
+	Node0x2529ec0 [shape=record,label="{strcmp}"];
+	Node0x2529f40 [shape=record,label="{print_array}"];
+	Node0x2529f40 -> Node0x252a5b0;
+	Node0x252a160 [shape=record,label="{free}"];
+	Node0x252a5b0 [shape=record,label="{fprintf}"];
+	Node0x252a1e0 [shape=record,label="{llvm.fmuladd.f64}"];
+	Node0x25297e0 [shape=record,label="{polybench_flush_cache}"];
+	Node0x25297e0 -> Node0x2529860;
+	Node0x25297e0 -> Node0x25298e0;
+	Node0x25297e0 -> Node0x252a160;
+	Node0x2529860 [shape=record,label="{calloc}"];
+	Node0x25298e0 [shape=record,label="{__assert_fail}"];
+	Node0x2529960 [shape=record,label="{polybench_prepare_instruments}"];
+	Node0x2529960 -> Node0x25297e0;
+	Node0x252c200 [shape=record,label="{polybench_timer_start}"];
+	Node0x252c200 -> Node0x2529960;
+	Node0x252c200 -> Node0x252c280;
+	Node0x252c280 [shape=record,label="{rtclock}"];
+	Node0x252c300 [shape=record,label="{polybench_timer_stop}"];
+	Node0x252c300 -> Node0x252c280;
+	Node0x252c380 [shape=record,label="{polybench_timer_print}"];
+	Node0x252c380 -> Node0x252c400;
+	Node0x252c400 [shape=record,label="{printf}"];
+	Node0x252c480 [shape=record,label="{polybench_free_data}"];
+	Node0x252c480 -> Node0x252a160;
+	Node0x24ff4e0 [shape=record,label="{polybench_alloc_data}"];
+	Node0x24ff4e0 -> Node0x252c500;
+	Node0x252c500 [shape=record,label="{xmalloc}"];
+	Node0x252c500 -> Node0x252c5b0;
+	Node0x252c500 -> Node0x252a5b0;
+	Node0x252c500 -> Node0x252c660;
+	Node0x252c5b0 [shape=record,label="{posix_memalign}"];
+	Node0x252c660 [shape=record,label="{exit}"];
+}

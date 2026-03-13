@@ -1,0 +1,35 @@
+digraph "Call graph: test.ll" {
+	label="Call graph: test.ll";
+
+	Node0x1457f20 [shape=record,label="{fopen}"];
+	Node0x1409020 [shape=record,label="{main}"];
+	Node0x1409020 -> Node0x1457f20;
+	Node0x1409020 -> Node0x1457fd0;
+	Node0x1409020 -> Node0x14580b0;
+	Node0x1409020 -> Node0x1458130;
+	Node0x1409020 -> Node0x14581b0;
+	Node0x1457fd0 [shape=record,label="{fprintf}"];
+	Node0x14580b0 [shape=record,label="{__isoc99_fscanf}"];
+	Node0x1458130 [shape=record,label="{fclose}"];
+	Node0x1458520 [shape=record,label="{compare}"];
+	Node0x14581b0 [shape=record,label="{main1}"];
+	Node0x14581b0 -> Node0x1457fd0;
+	Node0x14581b0 -> Node0x14585d0;
+	Node0x14581b0 -> Node0x1457f20;
+	Node0x14581b0 -> Node0x14580b0;
+	Node0x14581b0 -> Node0x1458130;
+	Node0x14581b0 -> Node0x1458bb0;
+	Node0x14581b0 -> Node0x14587a0;
+	Node0x14581b0 -> Node0x1458b30;
+	Node0x14581b0 -> Node0x1458ab0;
+	Node0x14585d0 [shape=record,label="{exit}"];
+	Node0x14587a0 [shape=record,label="{pow}"];
+	Node0x1458ab0 [shape=record,label="{sqrt}"];
+	Node0x1458b30 [shape=record,label="{printf}"];
+	Node0x1458bb0 [shape=record,label="{qsortx}"];
+	Node0x1458bb0 -> Node0x14591d0;
+	Node0x1458bb0 -> Node0x1459280;
+	Node0x14591d0 [shape=record,label="{shortsort}"];
+	Node0x14591d0 -> Node0x1459280;
+	Node0x1459280 [shape=record,label="{swap}"];
+}

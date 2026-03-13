@@ -1,0 +1,8 @@
+Found dataset:  1
+Command line:   -sDEVICE=ppm -dNOPAUSE -q -sOutputFile=output.ppm -- ../../office_data/1.ps > ftmp_out
+Loop wrap:      16
+
+
+real	0m8.995s
+user	0m8.582s
+sys	0m0.192s

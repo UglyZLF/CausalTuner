@@ -1,0 +1,9 @@
+{
+  "benchmark": "511.povray_r",
+  "build_dir": "/data/spec2017/benchspec/CPU/511.povray_r/build/build_base_none.0000",
+  "run_dir": "/data/spec2017/benchspec/CPU/511.povray_r/run/run_base_train_none.0000",
+  "script_dir": "/data/compiler_lctes26/run_scripts/511.povray_r",
+  "script_path": "/data/compiler_lctes26/run_scripts/511.povray_r/run_511.povray_r.sh",
+  "binary_name": "povray_r",
+  "binary_path": "/data/spec2017/benchspec/CPU/511.povray_r/build/build_base_none.0000/povray_r"
+}

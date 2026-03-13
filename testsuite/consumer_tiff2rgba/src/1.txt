@@ -1,0 +1,8 @@
+Found dataset:  1
+Command line:   -c none ../../consumer_tiff_data/1.tif output_largergba.tif > ftmp_out
+Loop wrap:      209
+
+
+real	0m1.527s
+user	0m1.384s
+sys	0m0.079s

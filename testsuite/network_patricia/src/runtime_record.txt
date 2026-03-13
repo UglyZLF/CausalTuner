@@ -1,0 +1,8 @@
+Found dataset:  1
+Command line:   ../../network_patricia_data/1.udp > output_large.txt
+Loop wrap:      40000
+
+
+real	0m2.444s
+user	0m1.898s
+sys	0m0.456s

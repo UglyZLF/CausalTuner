@@ -1,0 +1,9 @@
+{
+  "benchmark": "541.leela_r",
+  "build_dir": "/data/spec2017/benchspec/CPU/541.leela_r/build/build_base_none.0000",
+  "run_dir": "/data/spec2017/benchspec/CPU/541.leela_r/run/run_base_train_none.0000",
+  "script_dir": "/data/compiler_lctes26/run_scripts/541.leela_r",
+  "script_path": "/data/compiler_lctes26/run_scripts/541.leela_r/run_541.leela_r.sh",
+  "binary_name": "leela_r",
+  "binary_path": "/data/spec2017/benchspec/CPU/541.leela_r/build/build_base_none.0000/leela_r"
+}
