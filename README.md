@@ -122,43 +122,12 @@ clang++  llama-bench.bc -o llama_bc_runner -lpthread -ldl -lm -lrt
 ./llama_bc_runner  -m ./tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf -p 128 -n 128 -t 8
 ```
 
----
 
-## RL Environment Configuration: Understanding `llama.cpp` Parameters
-
-When running commands (e.g., via `llama-bench`), parameters like `-n` and `-t` are core control switches. Understanding their impact is crucial for designing the Reinforcement Learning (RL) reward function.
-
-### 1. `-t` or `--threads` (Thread Count)
-*   **Meaning**: Number of CPU cores/threads used for inference.
-*   **Function**: `llama.cpp` splits large matrix computations across multiple threads.
-*   **RL Impact**: More threads generally mean faster computation, but synchronization overhead increases. **Recommendation**: Set to the number of physical cores (e.g., 4 or 8).
-
-### 2. `-n` or `--n-predict` (Prediction Length)
-*   **Meaning**: Maximum number of tokens to output after processing the prompt.
-*   **Function**: Controls the length of the generated text.
-*   **RL Impact**: Directly affects runtime. `-n 32` finishes quickly; `-n 2048` may take minutes. For RL training, use a moderate value (e.g., **128** or **256**) to balance evaluation speed and accuracy.
-
-### 3. `-p` or `--prompt` (Prompt Text)
-*   **Meaning**: The input text.
-*   **Function**: Context for the model to understand and continue.
-*   **RL Impact**: The length of the prompt directly affects the **Prompt t/s** measurement. Longer prompts increase the proportion of pre-computation time.
-
-### 4. `-m` or `--model` (Model Path)
-*   **Meaning**: Path to the `.gguf` model file.
-*   **Function**: Loads the specific model weights (the "brain").
-
-### 5. `--temp` or `--temperature` (Sampling Temperature)
-*   **Meaning**: Controls the randomness of the output.
-*   **Function**:
-    *   `temp 0`: **Deterministic**. Identical input yields identical output.
-    *   `temp 0.8`: **Random**. More creative but less predictable.
-*   **RL Impact**: **ALWAYS use `--temp 0` for performance evaluation.** This ensures consistent execution paths across runs, eliminating randomness as a factor in runtime variance.
 
 ---
 
 ## Known Issues & Notes
 
-### Compilation Time vs. Performance
 We observed that `opt` and `clang` processes take a significant amount of time. Attempts to extract and compile components separately resulted in degraded performance, likely due to suboptimal function inlining when separating translation units.
 
 ### Recommended Testing Command
@@ -168,6 +137,6 @@ For consistent benchmarking, use the following command structure:
 # Compile the O3 baseline or tuned bitcode
 clang++ -march=native llama-bench-O3.bc -o bench_O3_front -lpthread -ldl -lm -lrt
 
-# Run the benchmark
+# Run the benchmark 
 ./bench_O3_front -m /data/compiler_demo/work/llama_bench/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf -p 128 -n 128 -t 8
 ```
