@@ -12,7 +12,7 @@ try:
     from algorithm import causal_config
 except ImportError:
     import causal_config
-
+from core.prog_classifier import get_prog_group
 class CausalGuidedGAOptimizer:
     def __init__(self, env_flags, n_pop=10, n_gen=30, bench_name="llama-bench"):
         """
@@ -26,7 +26,7 @@ class CausalGuidedGAOptimizer:
         
         # === 1. Feature Reading and Grouping ===
         # Llama is generally considered a complex application, classified as Group 2 (Global)
-        self.group_id = 2 
+        self.group_id = get_prog_group(self.bench_name) 
         self.total_dims = 22 # Dimensions for Group 2
         
         # Read features
