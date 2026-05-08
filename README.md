@@ -92,33 +92,12 @@ rm -rf *
 # Set LLVM compiler environment variable
 export LLVM_COMPILER=clang
 
-# Configure CMake with specific flags
-# Key flags:
-# - DCMAKE_C_COMPILER=wllvm / DCMAKE_CXX_COMPILER=wllvm++: For bitcode extraction
-# - DBUILD_SHARED_LIBS=OFF: Critical for static linking analysis
-# - DLLAMA_SERVER=OFF / DLLAMA_CURL=OFF: Minimal build
-cmake .. -DCMAKE_C_COMPILER=wllvm \
-         -DCMAKE_CXX_COMPILER=wllvm++ \
-         -DCMAKE_C_FLAGS="-O0" \
-         -DCMAKE_CXX_FLAGS="-O0" \
-         -DBUILD_SHARED_LIBS=OFF \
-         -DLLAMA_SERVER=OFF \
-         -DLLAMA_CURL=OFF
+
+cmake -S /home/lenovo/llama.cpp-master -B /home/lenovo/llama.cpp-master/build_O0 -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_FLAGS='-O0' -DCMAKE_CXX_FLAGS='-O0' -DLLAMA_CURL=OFF -DBUILD_SHARED_LIBS=OFF && cmake --build /home/lenovo/llama.cpp-master/build_O0 --target llama-bench -j$(nproc)
+```
 ```
 
-### 3. Compilation
-
-Compile only the necessary targets. **Note:** `llama-bench` is used for performance testing, not `llama-cli`.
-
-```bash
-# Compile llama-cli (optional, for basic verification)
-make llama-cli -j$(nproc)
-
-# Compile llama-bench (REQUIRED for testing)
-make llama-bench -j$(nproc)
-```
-
-### 4. Verification & Bitcode Extraction
+### 3. Verification & Bitcode Extraction
 
 After compilation, you can attempt to compile the extracted bitcode into a standalone binary to verify integrity.
 
