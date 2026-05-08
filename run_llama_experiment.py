@@ -8,15 +8,12 @@ import numpy as np
 from llama_env import LlamaEnv
 
 # 2. 引入算法
-
-from algorithm.GroupTunerAlg_llama import GroupTunerOptimizer
-from algorithm.Nevergrad_alg_llama import NevergradOptimizer
 from algorithm.CausalGuidedGA_llama import CausalGuidedGAOptimizer
 
 def main():
     if len(sys.argv) < 2:
         print("Usage: python run_llama_experiment.py <algo> [pop] [gen]")
-        print("Supported: ga, grouptuner, nevergrad")
+        print("Supported: causalga")
         sys.exit(1)
 
     algo_name = sys.argv[1]
@@ -70,29 +67,10 @@ def main():
 
     print(f"[*] Running {algo_name}...")
 
-    if algo_name == "ga":
-        # 如果是 GA，我们直接用你提供的 run_llama_ga.py 的逻辑
-        # 或者为了统一报告格式，我们用 ga_algorithm.py 调用 env
-        # 这里假设使用 ga_algorithm.py (需要稍微修改适配 LlamaEnv)
-        # 为了稳妥，这里先不建议改 GA，GA 单独跑 run_llama_ga.py 即可
-        print("For GA, please run 'python run_llama_ga.py' directly.")
-        return
-
-    elif algo_name == "grouptuner":
-        # GroupTuner 需要 all_flags (names)
-        opt = GroupTunerOptimizer(all_flags=env.llvm_flags, n_pop=n_pop, n_gen=n_gen)
-        best_vec, best_fit, curve = opt.run(get_fitness)
-
-    elif algo_name == "nevergrad":
-        # Nevergrad 需要 n_flags (count)
-        opt = NevergradOptimizer(n_flags=env.n_flags, n_pop=n_pop, n_gen=n_gen)
-        best_vec, best_fit, curve = opt.run(get_fitness)
-    elif algo_name == "causalga":
+    if algo_name == "causalga":
         # 传入 env.llvm_flags 以便内部做映射
         opt = CausalGuidedGAOptimizer(env_flags=env.llvm_flags, n_pop=n_pop, n_gen=n_gen, bench_name="llama-bench")
         best_vec, best_fit, curve = opt.run(get_fitness)
-
-
     else:
         print(f"Unknown algo: {algo_name}")
         return
@@ -118,7 +96,7 @@ def main():
         "curve": curve
     }
 
-    output_file = f"report_llama_{algo_name}.json"
+    output_file = f"report_llama_{algo_name}_5_5_5.json"
     with open(output_file, 'w') as f:
         json.dump(report, f, indent=4)
         
